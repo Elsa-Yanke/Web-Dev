@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(254, 215, 254);
+    font-family: Georgia, serif;
+}
+
+h1 {
+    color:rgb(62, 39, 112);
+    font-size: 50px;
+}
+
+h2{
+    color:rgb(77, 57, 254);
+    font-size: 38px;
+}
+
+#selec {
+    background-color: blueviolet;
+    border-radius: 20px;
+    border-style: dashed;
+}
+
+p {
+    color:rgb(42, 29, 53);
+}
+
+a:hover {
+    color:rgb(69, 60, 14);
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 8px;
+  list-style-type:georgian; 
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ab0f0f;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #ed4747;
+}
