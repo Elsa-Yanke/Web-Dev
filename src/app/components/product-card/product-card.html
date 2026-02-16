@@ -1,0 +1,21 @@
+<div class="card" *ngIf="product">
+  <img class="image" [src]="product.image" [alt]="product.name" />
+
+  <h3 class="title">{{ product.name }}</h3>
+
+  <p class="desc">{{ product.description }}</p>
+
+  <div class="meta">
+    <span class="price">{{ product.price }} ₸</span>
+    <span class="rating">⭐ {{ product.rating }}</span>
+  </div>
+
+  <div class="actions">
+    <a class="btn link" [href]="product.link" target="_blank" rel="noopener">
+      View on Kaspi
+    </a>
+
+    <button class="btn wa" (click)="shareWhatsApp()">WhatsApp</button>
+    <button class="btn tg" (click)="shareTelegram()">Telegram</button>
+  </div>
+</div>
