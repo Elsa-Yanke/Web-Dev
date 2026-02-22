@@ -1,0 +1,32 @@
+.search-container {
+  max-width: 1200px;
+  margin: 0 auto 18px auto;
+  padding: 0 10px;
+}
+
+.search-container label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+}
+
+.counter {
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.empty {
+  text-align: center;
+  margin-top: 24px;
+  font-weight: 600;
+  opacity: 0.75;
+}

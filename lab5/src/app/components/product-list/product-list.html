@@ -1,0 +1,28 @@
+<div class="search-container">
+  <label for="search">Search products</label>
+
+  <input
+    id="search"
+    type="text"
+    placeholder="Search by product name..."
+    [(ngModel)]="searchQuery"
+    (input)="filterProducts()"
+  />
+
+  <div class="counter">
+    Showing: {{ filteredProducts.length }} / {{ products.length }} products
+  </div>
+</div>
+
+<div class="products-grid" *ngIf="filteredProducts.length > 0">
+  <app-product-card
+    *ngFor="let product of filteredProducts"
+    [product]="product"
+    (like)="onLike($event)"
+    (delete)="onDelete($event)"
+  ></app-product-card>
+</div>
+
+<p class="empty" *ngIf="filteredProducts.length === 0">
+  No products found
+</p>
