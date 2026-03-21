@@ -15,10 +15,12 @@ import { PRODUCTS } from './data/products';
   standalone: true,
   imports: [CommonModule, ProductListComponent],
   templateUrl: './app.html',
+  
 })
 export class AppComponent {
   categories: Category[] = CATEGORIES;
   products: Product[] = PRODUCTS;
+  favorites: Product[] = [];
 
   selectedCategoryId: number | null = null;
 
@@ -39,6 +41,14 @@ handleLike(id: number): void {
       break;
     }
   }
+}
+
+toggleFavorite(productId: number): void {
+  const product = this.products.find(p => p.id === productId);
+  if (!product) return;
+
+  product.isFavorite = !product.isFavorite;
+  this.favorites = this.products.filter(p => p.isFavorite);
 }
 
   get filteredProducts(): Product[] {

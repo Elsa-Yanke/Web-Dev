@@ -1,15 +1,29 @@
-@if (loading()) {
-  <p>Loading albums...</p>
-} @else {
+<div class="wrap">
+  <div class="header">
+    <h2>Albums</h2>
+    <a class="new" routerLink="/albums/new">+ New Album</a>
+  </div>
 
-  @for (album of albums(); track album.id) {
-    <div class="album">
-      <a [routerLink]="['/albums', album.id]">
-        {{ album.id }} - {{ album.title }}
-      </a>
-
-      <button (click)="deleteAlbum(album.id)">Delete</button>
-    </div>
+  @if (error) {
+    <p class="error">{{ error }}</p>
   }
 
-}
+  <ng-container *ngIf="albums$ | async as albums; else loading">
+    @if (albums.length === 0) {
+      <p class="muted">No albums</p>
+    } @else {
+      <div class="list">
+        <div class="item" *ngFor="let album of albums">
+          <a class="link" [routerLink]="['/albums', album.id]">
+            #{{ album.id }} — {{ album.title }}
+          </a>
+          <button class="danger" (click)="deleteAlbum(album.id)">Delete</button>
+        </div>
+      </div>
+    }
+  </ng-container>
+
+  <ng-template #loading>
+    <p class="muted">Loading albums...</p>
+  </ng-template>
+</div>

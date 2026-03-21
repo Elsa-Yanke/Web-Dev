@@ -5,15 +5,18 @@ import { AboutComponent } from './pages/about/about';
 import { AlbumsComponent } from './pages/albums/albums';
 import { AlbumDetail } from './pages/album-detail/album-detail';
 import { AlbumPhotosComponent } from './pages/album-photos/album-photos';
+import { AlbumCreateComponent } from './pages/album-create/album-create';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
+
   { path: 'albums', component: AlbumsComponent },
+  { path: 'albums/new', component: AlbumCreateComponent },   // ✅ ВАЖНО: выше :id
   { path: 'albums/:id', component: AlbumDetail },
   { path: 'albums/:id/photos', component: AlbumPhotosComponent },
 
-  { path: '**', redirectTo: 'home' }
+  { path: '**', redirectTo: 'home' },
 ];

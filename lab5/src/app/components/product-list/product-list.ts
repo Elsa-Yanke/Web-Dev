@@ -18,9 +18,11 @@ export class ProductListComponent implements OnChanges {
   // ВАЖНО: события вверх
   @Output() deleteProduct = new EventEmitter<number>();
   @Output() likeProduct = new EventEmitter<number>();
+  @Output() favorite = new EventEmitter<number>();
 
   searchQuery = '';
   filteredProducts: Product[] = [];
+
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['products']) {
@@ -35,6 +37,10 @@ export class ProductListComponent implements OnChanges {
       ? this.products
       : this.products.filter(p => p.name.toLowerCase().includes(q));
   }
+
+onFavorite(id: number): void {
+  this.favorite.emit(id);
+}
 
   onLike(id: number): void {
     this.likeProduct.emit(id);

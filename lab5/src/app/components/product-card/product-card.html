@@ -10,11 +10,14 @@
     <span class="likes">❤️ {{ product.likes }}</span>
   </div>
 
+
   <div class="actions">
     <a class="btn link" [href]="product.link" target="_blank" rel="noopener">
       View on Kaspi
     </a>
-
+    <button (click)="onFavoriteClick()">
+      {{ product.isFavorite ? '★ Remove' : '☆ Add to Favorites' }}
+    </button>
     <button class="btn like" (click)="onLike()">❤️ Like</button>
     <button class="btn del" (click)="onDelete()">🗑 Delete</button>
 

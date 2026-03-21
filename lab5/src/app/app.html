@@ -14,9 +14,23 @@
   Choose a category to see products
 </div>
 
+<!-- ✅ FAVORITES ВВЕРХУ -->
+<h2>★ Favorites ({{ favorites.length }})</h2>
+<p *ngIf="favorites.length === 0">No favorite products yet</p>
+
+<app-product-list
+  *ngIf="favorites.length > 0"
+  [products]="favorites"
+  (deleteProduct)="handleDelete($event)"
+  (likeProduct)="handleLike($event)"
+  (favorite)="toggleFavorite($event)"
+></app-product-list>
+
+<!-- ✅ PRODUCTS -->
 <app-product-list
   *ngIf="selectedCategoryId !== null"
   [products]="filteredProducts"
   (deleteProduct)="handleDelete($event)"
   (likeProduct)="handleLike($event)"
+  (favorite)="toggleFavorite($event)"
 ></app-product-list>

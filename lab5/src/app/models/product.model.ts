@@ -5,7 +5,8 @@ export interface Product {
   description: string;
   image: string;       // url картинки
   link: string;        // kaspi.kz link
-  categoryId: number;  // связь с категорией
+  categoryId: number;  
   likes: number;   
-  rating:number;    // старт 0
+  rating:number;
+  isFavorite: boolean;
 }

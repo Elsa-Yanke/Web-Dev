@@ -12,8 +12,14 @@ import { Product } from '../../models/product.model';
 export class ProductCardComponent {
   @Input() product!: Product;
 
+
+  @Output() favorite = new EventEmitter<number>();
   @Output() like = new EventEmitter<number>();     // передаём id товара
   @Output() delete = new EventEmitter<number>();   // передаём id товара
+
+  onFavoriteClick(): void {
+  this.favorite.emit(this.product.id);
+  }
 
   onLike(): void {
     this.like.emit(this.product.id);

@@ -11,7 +11,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/apple-iphone-16-128gb-chernyi-123713453/?c=750000000',
     categoryId: 1,
     likes: 12,
-    rating: 4.9
+    rating: 4.9,
+    isFavorite: false
   },
   {
     id: 102,
@@ -22,7 +23,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/samsung-galaxy-a07-6-gb-128-gb-lavandovyi-144817894/?c=750000000',
     categoryId: 1,
     likes: 3,
-    rating: 4.5
+    rating: 4.5,
+    isFavorite: false
   },
   {
     id: 103,
@@ -33,7 +35,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/realme-note-70-6-gb-128-gb-zolotistyi-145564514/?c=750000000',
     categoryId: 1,
     likes: 43,
-    rating: 4.3
+    rating: 4.3,
+    isFavorite: false
   },
   {
     id: 104,
@@ -44,7 +47,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/steklo-dlja-apple-iphone-11-pro-max-ag-matte-glass-chernyi-143096947/?c=750000000',
     categoryId: 1,
     likes: 7,
-    rating: 4.7
+    rating: 4.7,
+    isFavorite: false
   },
   {
     id: 105,
@@ -55,10 +59,10 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/apple-20w-usb-c-power-adapter-belyi-100984093/?c=750000000',
     categoryId: 1,
     likes: 34,
-    rating: 4.8
+    rating: 4.8,
+    isFavorite: false
   },
 
-  // Laptops (categoryId: 2)
   {
     id: 201,
     name: 'Apple MacBook Air 13 (2020) 8/256GB MGN63RU/A',
@@ -68,7 +72,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/apple-macbook-air-13-2020-13-3-8-gb-ssd-256-gb-macos-mgn63ru-a-101182724/?c=750000000',
     categoryId: 2,
     likes: 34,
-    rating: 4.9
+    rating: 4.9,
+    isFavorite: false
   },
   {
     id: 202,
@@ -79,7 +84,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/asus-rog-strix-g16-16-16-gb-ssd-512-gb-bez-os-90nr0n71-m001j0-144690023/?c=750000000',
     categoryId: 2,
     likes: 53,
-    rating: 4.8
+    rating: 4.8,
+    isFavorite: false
   },
   {
     id: 203,
@@ -90,7 +96,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/dell-xps-13-9345-13-4-16-gb-ssd-512-gb-win-11-210-bmtr-140113298/?c=750000000',
     categoryId: 2,
     likes: 15,
-    rating: 4.7
+    rating: 4.7,
+    isFavorite: false
   },
   {
     id: 204,
@@ -101,21 +108,22 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/lenovo-ideapad-3-15-6-8-gb-ssd-256-gb-dos-15igl05-81wq00errk-102715483/?c=750000000',
     categoryId: 2,
     likes: 64,
-    rating: 4.2
+    rating: 4.2,
+    isFavorite: false
   },
   {
     id: 205,
     name: 'HP Pavilion 15.6 16/1024GB Win 11 (15-eh3000ci 7P437EA)',
     price: 579000,
     description: 'Powerful laptop for work/study (HP Pavilion).',
-    image: 'assets/pics/hp.jpg',
+    image: 'assets/pics/lenovo.jpg',
     link: 'https://kaspi.kz/shop/p/hp-pavilion-15-6-16-gb-ssd-1024-gb-win-11-home-15-eh3000ci-7p437ea-118476602/?c=750000000',
     categoryId: 2,
     likes: 31,
-    rating: 4.4
+    rating: 4.4,
+    isFavorite: false
   },
 
-  // Headphones (categoryId: 3)
   {
     id: 301,
     name: 'Sony WH-1000XM5 Black',
@@ -125,7 +133,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/naushniki-sony-wh-1000xm5-chernyi-105259822/?c=750000000',
     categoryId: 3,
     likes: 85,
-    rating: 4.9
+    rating: 4.9,
+    isFavorite: false
   },
   {
     id: 302,
@@ -136,7 +145,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/naushniki-air-pro-2-belyi-118366664/?c=750000000',
     categoryId: 3,
     likes: 32,
-    rating: 4.6
+    rating: 4.6,
+    isFavorite: false
   },
   {
     id: 303,
@@ -147,7 +157,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/naushniki-samsung-galaxy-buds-fe-belyi-114022026/?c=750000000',
     categoryId: 3,
     likes: 87,
-    rating: 4.7
+    rating: 4.7,
+    isFavorite: false
   },
   {
     id: 304,
@@ -158,7 +169,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/naushniki-xiaomi-mi-in-ear-headphones-basic-serebristyi-4804216/?c=750000000',
     categoryId: 3,
     likes: 23,
-    rating: 4.4
+    rating: 4.4,
+    isFavorite: false
   },
   {
     id: 305,
@@ -169,10 +181,10 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/naushniki-xiaomi-redmi-buds-5-chernyi-113969806/?c=750000000',
     categoryId: 3,
     likes: 45,
-    rating: 4.5
+    rating: 4.5,
+    isFavorite: false
   },
 
-  // Watches (categoryId: 4)
   {
     id: 401,
     name: 'Apple Watch Series 10 (S/M) 42mm',
@@ -182,7 +194,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/apple-watch-series-10-s-m-42-mm-cherno-sinii-128578467/?c=750000000',
     categoryId: 4,
     likes: 93,
-    rating: 4.7
+    rating: 4.7,
+    isFavorite: false
   },
   {
     id: 402,
@@ -193,7 +206,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/xiaomi-mi-band-7-chernyi-105075100/?c=750000000',
     categoryId: 4,
     likes: 32,
-    rating: 4.5
+    rating: 4.5,
+    isFavorite: false
   },
   {
     id: 403,
@@ -204,7 +218,8 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/samsung-galaxy-watch6-44-mm-grafitovyi-chernyi-112368202/?c=750000000',
     categoryId: 4,
     likes: 64,
-    rating: 4.6
+    rating: 4.6,
+    isFavorite: false
   },
   {
     id: 404,
@@ -215,7 +230,8 @@ export const PRODUCTS: Product[] = [
     link: 'PASTE_KASPI_LINK',
     categoryId: 4,
     likes: 54,
-    rating: 4.4
+    rating: 4.4,
+    isFavorite: false
   },
   {
     id: 405,
@@ -226,6 +242,7 @@ export const PRODUCTS: Product[] = [
     link: 'https://kaspi.kz/shop/p/amazfit-gts-3-44-mm-chernyi-chernyi-102692901/?c=750000000',
     categoryId: 4,
     likes: 23,
-    rating: 4.5
+    rating: 4.5,
+    isFavorite: false
   }
 ];  

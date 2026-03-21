@@ -1,0 +1,48 @@
+<div class="wrap">
+  <div class="card">
+    <h2>Create New Album</h2>
+    <p class="muted">JSONPlaceholder will not save it реально, поэтому мы делаем optimistic UI.</p>
+
+    @if (error()) {
+      <div class="error">{{ error() }}</div>
+    }
+
+    <form (ngSubmit)="create()" class="form">
+      <label class="field">
+        <span>User ID (1–10)</span>
+        <input
+          type="number"
+          min="1"
+          max="10"
+          [ngModel]="userId()"
+          (ngModelChange)="userId.set($event)"
+          name="userId"
+          required
+        />
+      </label>
+
+      <label class="field">
+        <span>Title (min 3 chars)</span>
+        <input
+          type="text"
+          [ngModel]="title()"
+          (ngModelChange)="title.set($event)"
+          name="title"
+          required
+          minlength="3"
+          placeholder="e.g. My new album"
+        />
+      </label>
+
+      <div class="buttons">
+        <button class="primary" type="submit" [disabled]="creating()">
+          @if (creating()) { Creating... } @else { Create }
+        </button>
+
+        <button type="button" class="ghost" (click)="cancel()" [disabled]="creating()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
