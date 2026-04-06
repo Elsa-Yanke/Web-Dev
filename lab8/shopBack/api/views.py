@@ -1,53 +1,38 @@
-from django.http import JsonResponse
-from .models import Product, Category
+from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
-def products_list(request):
-    products = Product.objects.all()
-    data = []
-    for p in products:
-        data.append({
-            'id': p.id,
-            'name': p.name,
-            'price': p.price,
-            'description': p.description,
-            'count': p.count,
-            'is_active': p.is_active,
-            'category': p.category.name,
-        })
-    return JsonResponse(data, safe=False)
+from .models import Category, Product
+from .serializers import CategorySerializer, ProductSerializer
 
-def product_detail(request, id):
-    p = Product.objects.get(id=id)
-    data = {
-        'id': p.id,
-        'name': p.name,
-        'price': p.price,
-        'description': p.description,
-        'count': p.count,
-        'is_active': p.is_active,
-        'category': p.category.name,
-    }
-    return JsonResponse(data)
 
-def categories_list(request):
-    categories = Category.objects.all()
-    data = [{'id': c.id, 'name': c.name} for c in categories]
-    return JsonResponse(data, safe=False)
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
 
-def category_detail(request, id):
-    c = Category.objects.get(id=id)
-    return JsonResponse({'id': c.id, 'name': c.name})
+    @action(detail=True, methods=['get'])
+    def products(self, request, pk=None):
+        category = self.get_object()
+        products = Product.objects.filter(category=category)
+        serializer = ProductSerializer(products, many=True)
+        return Response(serializer.data)
 
-def category_products(request, id):
-    products = Product.objects.filter(category_id=id)
-    data = []
-    for p in products:
-        data.append({
-            'id': p.id,
-            'name': p.name,
-            'price': p.price,
-            'description': p.description,
-            'count': p.count,
-            'is_active': p.is_active,
-        })
-    return JsonResponse(data, safe=False)
+
+class ProductViewSet(viewsets.ModelViewSet):
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        queryset = Product.objects.all()
+
+        category_id = self.request.query_params.get('category')
+        active = self.request.query_params.get('active')
+        search = self.request.query_params.get('search')
+
+        if category_id:
+            queryset = queryset.filter(category_id=category_id)
+        if active:
+            queryset = queryset.filter(is_active=active.lower() == 'true')
+        if search:
+            queryset = queryset.filter(name__icontains=search)
+
+        return queryset
